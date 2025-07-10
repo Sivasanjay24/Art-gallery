@@ -22,17 +22,17 @@
   transition: all 0.3s ease;
   padding-bottom: 20px;
 }
-.icon img 
+.logo img 
 {
   height: 20px;
   width: 20px;
 }
 
 .icon:hover {
-  color: #d81b60;
+  color: #420de1;
   transform: scale(1.2);
 }
 
 .icon.active {
-  color: #d81b60;
+  color: #420de1;
 }
