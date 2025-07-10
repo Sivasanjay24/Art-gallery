@@ -1,13 +1,7 @@
 
-
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 36px;
-  color: #d81b60;
+.app {
+  padding: 20px;
+  padding-left: 80px; 
 }
 
 .gallery {
@@ -37,6 +31,7 @@ header h1 {
   margin-bottom: 16px;
   break-inside: avoid;
   overflow: hidden;
+  border: 1px solid #000000;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

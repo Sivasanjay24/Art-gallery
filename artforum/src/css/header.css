@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 2px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  height : 60px;
+  z-index: 100;
+}
+
+/* .logo {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #d81b60;
+  gap: 8px;
+  cursor : pointer;
+}
+
+.logo img {
+  height: 32px;
+  width: 32px;
+  padding-left: 80px;
+} */
+
+/* .profile-icon {
+  height: 40px;
+  width: 40px;
+  padding-right: 20px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.05);
+} */
