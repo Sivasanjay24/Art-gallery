@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/sidebar.css";
 
 function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="logo">
-        <img src="/logo.jpg" alt="Logo"/>
+        <Link to="/"><img src="public\images\logo.jpg" alt="Logo"/></Link>
       </div>
       <div className="icon active">
-        <i className="fas fa-home"></i>
+        <Link to="/"><i className="fas fa-home"></i></Link>
       </div>
       <div className="icon">
         <i className="fas fa-plus-square"></i>
