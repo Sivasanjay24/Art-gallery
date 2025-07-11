@@ -14,8 +14,10 @@ function ImagePage() {
   return (
     <div className="image-page">
       <img src={`/images/${image.image}`} alt={image.title} />
+      <div className="image-details">
       <h2>{image.title}</h2>
       <p className="image-description">{image.description}</p>
+      </div>
     </div>
   );
 }

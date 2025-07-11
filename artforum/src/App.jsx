@@ -22,7 +22,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/image/:id" element={<ImagePage />} />
               </Routes>
-             </div>
+            </div>
           </div>
         </div>
       </BrowserRouter>

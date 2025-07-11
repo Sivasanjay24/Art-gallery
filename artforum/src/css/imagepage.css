@@ -1,16 +1,21 @@
 .image-page {
-  padding-top: 100px;
+  padding-left: 100px;
+  padding-top: 60px;
   max-width: 800px;
-  margin: auto;
   text-align: center;
 }
 
 
 .image-page img {
-  width: 40%;
+  width: 50%;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   float:left;
+}
+
+.image-page h2
+{
+  color : black;
 }
 .image-description {
   margin-top: 16px;

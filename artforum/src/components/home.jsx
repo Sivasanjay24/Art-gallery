@@ -7,7 +7,7 @@ function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="app"style={{ marginLeft: "60px" }}>
+    <div className="app" style={{ marginLeft: "60px" }}>
       <div className="gallery">
         {imageData.map((item) => (
           <div
@@ -15,12 +15,24 @@ function HomePage() {
             key={item.id}
             onClick={() => navigate(`/image/${item.id}`)}
           >
-            <img src={`/images/${item.image}`} alt={item.title} />
+            <div className="image-container">
+              <img src={`/images/${item.image}`} alt={item.title} />
+
+              <div className="icon-heart">
+                <i className="fas fa-heart"></i>
+              </div>
+
+              <div className="icon-save">
+                <i className="fa-solid fa-bookmark"></i>
+              </div>
+            </div>
           </div>
         ))}
       </div>
     </div>
   );
 }
+
+
 
 export default HomePage;

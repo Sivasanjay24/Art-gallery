@@ -28,12 +28,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-top :60px;
 }
 
 
 
 .searchbar-wrapper {
-  width: 100vw;       /* Full viewport width */
+  width: 100vw;
   position: sticky;
   top: 0;
   background-color: #f7f2f2;
