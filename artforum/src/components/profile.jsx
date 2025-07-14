@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/profile.css";
 
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("posts");
+  const navigate = useNavigate();
 
   const dummyPosts = [
     { id: 1, image: "img1.jpeg" },
@@ -22,7 +24,13 @@ const ProfilePage = () => {
   const renderImages = (images) => (
     <div className="profile-gallery">
       {images.map((item) => (
-        <img key={item.id} src={`/images/${item.image}`} alt={`img-${item.id}`} />
+        <img
+          key={item.id}
+          src={`/images/${item.image}`}
+          alt={`img-${item.id}`}
+          onClick={() => navigate(`/image/${item.id}`)}
+          className="clickable-image"
+        />
       ))}
     </div>
   );
@@ -30,8 +38,7 @@ const ProfilePage = () => {
   return (
     <div className="profile-page">
       <div className="profile-header">
-        <img src="/images/profile.png
-        " alt="Profile" className="profile-pic" />
+        <img src="/images/profile.png" alt="Profile" className="profile-pic" />
         <h2>@sivasanjay</h2>
         <p>Web Developer | Art Enthusiast | AI Explorer</p>
       </div>
