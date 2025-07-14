@@ -15,7 +15,7 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #d81b60;
+  border: 3px solid #450de1;
   margin-bottom: 10px;
 }
 
@@ -38,8 +38,8 @@
 }
 
 .profile-tabs .active {
-  border-bottom: 2px solid #d81b60;
-  color: #d81b60;
+  border-bottom: 2px solid #450de1;
+  color: #450de1;
 }
 
 .profile-content {
