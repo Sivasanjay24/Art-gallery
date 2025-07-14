@@ -3,6 +3,7 @@ import Home from "./components/home.jsx";
 import SearchBar from "./components/search.jsx";
 import Sidebar from "./components/sidebar.jsx";
 import ImagePage from "./components/imagedetail.jsx";
+import ProfilePage from "./components/profile.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/image/:id" element={<ImagePage />} />
+                <Route path="/profile" element={<ProfilePage />} />
               </Routes>
             </div>
           </div>

@@ -21,8 +21,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
   padding-bottom: 20px;
-  text-decoration: none;
 }
+
+.icon-link
+{
+  text-decoration: none;
+  color:inherit;
+}
+
 .logo img 
 {
   height: 20px;
@@ -31,9 +37,9 @@
 
 .icon:hover {
   color: #420de1;
-  transform: scale(1.2);
+  transform:scale(1.2)
 }
-
-/* .icon.active {
+.icon.active
+{
   color: #420de1;
-} */
+}
