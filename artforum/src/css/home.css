@@ -31,7 +31,7 @@
   break-inside: avoid;
   overflow: hidden;
   border: 1px solid #000000;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,22 +54,9 @@
   transition: transform 0.3s ease;
 }
 
-
-.image-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.image-container img {
-  width: 100%;
-  display: block;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
 .image-container:hover img {
   transform: scale(1.03);
+  transition: transform 0.3s ease;
 }
 
 
