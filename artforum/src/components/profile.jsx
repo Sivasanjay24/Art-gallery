@@ -43,7 +43,7 @@ const ProfilePage = () => {
       <div className="profile-header">
         <div className="profile-pic-wrapper">
           <img src="/images/profile.png" alt="Profile" className="profile-pic" />
-          <img src="/images/.png" alt="Mask" className="profile-mask" />
+          <img src="/images/edit4.jpg" alt="Mask" className="profile-mask" />
         </div>
         <h2>@sivasanjay</h2>
         <p>Web Developer | Art Enthusiast | AI Explorer</p>
