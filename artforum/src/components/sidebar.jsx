@@ -10,7 +10,7 @@ function Sidebar() {
           <img src="public\images\logo.jpg" alt="Logo" />
         </Link>
       </div>
-      <div className="icon active">
+      <div className="icon">
         <Link to="/" className="icon-link">
           <i className="fa fa-home"></i>
         </Link>
