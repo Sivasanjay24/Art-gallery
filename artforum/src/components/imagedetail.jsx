@@ -17,6 +17,7 @@ function ImagePage() {
       <div className="image-details">
       <h2>{image.title}</h2>
       <p className="image-description">{image.description}</p>
+      <p className="image-author">By:<Link to ="/author" >{image.author}</Link></p>
       </div>
     </div>
   );

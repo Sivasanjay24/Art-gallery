@@ -1,24 +1,50 @@
 .image-page {
-  padding-left: 100px;
-  padding-top: 60px;
-  max-width: 800px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 40px;
+  gap: 40px;
+  flex-wrap: wrap;
 }
-
 
 .image-page img {
-  width: 50%;
+  max-width: 350px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  float:left;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.image-page h2
-{
-  color : black;
+.image-details {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-.image-description {
-  margin-top: 16px;
-  font-size: 18px;
+
+.image-details h2 {
+  font-size: 28px;
   color: #333;
+  margin: 0;
+}
+
+.image-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.image-author {
+  color: #777;
+  font-size: 20px;
+}
+
+.image-author a {
+  color: #000000;
+  text-decoration: none; /* Make sure underline is removed */
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 5px;
+  transition: all 0.5s ease;
 }
