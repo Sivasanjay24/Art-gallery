@@ -45,10 +45,12 @@ const CreatePost = () => {
           <div className="form-section">
             <input type="text" placeholder="Add a title" className="form-input" />
             <textarea placeholder="Add a detailed description" className="form-textarea"></textarea>
-            {/* <button className="save-button">Save</button> */}
+            
           </div>
         </div>
+        
       </div>
+      <button className="save-button">Save</button>
     </div>
   );
 };

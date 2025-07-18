@@ -16,7 +16,9 @@ function Sidebar() {
         </Link>
       </div>
       <div className="icon">
-        <i className="fas fa-plus-square"></i>
+        <Link to="/createpost" className="icon-link">
+      <i className="fas fa-plus-square"></i>
+        </Link>
       </div>
       <div className="icon">
         <Link to="/profile" className="icon-link">
