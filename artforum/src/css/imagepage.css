@@ -5,6 +5,8 @@
   padding: 80px 40px;
   gap: 40px;
   flex-wrap: wrap;
+  background-color: var(--page-bg);
+  color: var(--text-color);
 }
 
 .image-page img {
@@ -12,7 +14,7 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px var(--box-shadow-color);
 }
 
 .image-details {
@@ -25,13 +27,13 @@
 
 .image-details h2 {
   font-size: 28px;
-  color: #333;
+  color: var(--text-color);
   margin: 0;
 }
 
 .image-description {
   font-size: 16px;
-  color: #555;
+  color: var(--text-color);
   line-height: 1.6;
 }
 
@@ -41,10 +43,18 @@
 }
 
 .image-author a {
-  color: #000000;
-  text-decoration: none; /* Make sure underline is removed */
+  color: var(--text-color);
+  text-decoration: none;
   font-weight: 500;
   cursor: pointer;
   padding: 10px 5px;
   transition: all 0.5s ease;
+  border-radius: 10px;
+  padding:10px;
+}
+.image-author a:hover {
+  color: var(--text-color);
+  transform: scale(1.05);
+  background-color: var(--bg-color);
+  
 }

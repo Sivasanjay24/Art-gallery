@@ -7,7 +7,7 @@ function Sidebar() {
     <aside className="sidebar">
       <div className="logo">
         <Link to="/">
-          <img src="public\images\logo.jpg" alt="Logo" />
+          <img src="public\images\logo.png" alt="Logo" />
         </Link>
       </div>
       <div className="icon">

@@ -1,9 +1,9 @@
 .author-page {
   padding: 30px 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   max-width: 900px;
   margin: 0 auto;
-  color:  hsl(223, 89%, 47%);
+  color: var(--primary-color);
+  background-color: var(--page-bg);
 }
 
 .button {
@@ -16,7 +16,7 @@
   padding: 8px 20px;
   font-size: 14px;
   border: none;
-  background-color:  hsl(223, 89%, 47%);
+  background-color: var(--primary-color);
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -32,17 +32,15 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
-  color: #555;
+  color: var(--text-color);
 }
-
-
 
 .author-pic {
   width: 160px;
   height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--box-shadow-color);
 }
 
 .author-mask {
@@ -54,12 +52,12 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  transition:all 0.5s ease;
-
+  transition: all 0.5s ease;
 }
-.author-mask:hover{
-  opacity:0.8;
-  transition:all 0.9s ease;
+
+.author-mask:hover {
+  opacity: 0.8;
+  transition: all 0.9s ease;
 }
 
 .author-header h2 {
@@ -69,7 +67,7 @@
 
 .author-header p {
   font-size: 14px;
-  color: #666;
+  color: var(--text-color);
   max-width: 80%;
   text-align: center;
 }
@@ -93,9 +91,9 @@
 }
 
 .author-tabs button.active {
-  background-color:  hsl(223, 89%, 47%);
+  background-color: var(--primary-color);
   color: #fff;
-  border-color:  hsl(223, 89%, 47%);
+  border-color: var(--primary-color);
 }
 
 .author-tabs button:hover:not(.active) {
@@ -121,7 +119,7 @@
 
 .clickable-image:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px var(--box-shadow-color);
 }
 
 @media (max-width: 600px) {

@@ -1,22 +1,53 @@
+/* index.css */
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-primary: hsl(223, 89%, 47%);
+  --color-primary-hover: hsla(223, 89%, 47%, 0.6);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #f4f0f0;
+  --bg-light: #f7f2f2;
+  --bg-dark: #222222;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --text-light: #222;
+  --text-dark: #eee;
+
+  --bg-page-light: #fafafa;
+  --bg-page-dark: #333333;
+
+  --border-dark: #c9c4c4;
+  --border-light: #676767;
+
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+}
+
+/* Light theme as default */
+[data-theme="light"], html:not([data-theme]) {
+  --bg-color: var(--bg-light);
+  --text-color: var(--text-light);
+  --navbar-bg: #ffffff;
+  --border-color: var(--border-light);
+  --box-shadow-color: var(--shadow-light);
+  --page-bg: var(--bg-page-light);
+  --primary-color: var(--color-primary);
+  --primary-hover: var(--color-primary-hover);
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --bg-color: var(--bg-dark);
+  --text-color: var(--text-dark);
+  --navbar-bg: #1a1a1a;
+  --border-color: var(--border-dark);
+  --box-shadow-color: var(--shadow-dark);
+  --page-bg: var(--bg-page-dark);
+  --primary-color: var(--color-primary);
+  --primary-hover: var(--color-primary-hover);
 }
 
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
