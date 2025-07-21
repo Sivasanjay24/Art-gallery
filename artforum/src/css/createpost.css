@@ -50,14 +50,14 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   color: #f2ebeb;
-  background-color: #420de1;
+  background-color:  hsl(223, 89%, 47%);
   border-radius:10px;
   padding: 10px 0px;
   margin-top: 80px;
 
 }
 .upload-label:hover{
-  background-color: #693cf0;
+  background-color: hsla(223, 89%, 47%, 0.623);
 }
 
 .file-input {
@@ -98,7 +98,7 @@ select {
 
 .save-button {
   padding: 0.8rem;
-  background-color: #420de1;
+  background-color:  hsl(223, 89%, 47%);
   color: white;
   border: none;
   border-radius: 6px;
@@ -112,7 +112,7 @@ select {
 
 
 .save-button:hover {
- background-color: #693cf0;
+ background-color: hsla(223, 89%, 47%, 0.623);
 }
 
 /* Responsive behavior */

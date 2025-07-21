@@ -24,5 +24,5 @@
 }
 
 .search-bar input:focus {
-  border-color: #450de1;
+  border-color:  hsl(223, 89%, 47%);
 }

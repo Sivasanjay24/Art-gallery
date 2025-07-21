@@ -3,7 +3,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   max-width: 900px;
   margin: 0 auto;
-  color: #420de1;
+  color:  hsl(223, 89%, 47%);
 }
 
 .button {
@@ -16,7 +16,7 @@
   padding: 8px 20px;
   font-size: 14px;
   border: none;
-  background-color: #420de1;
+  background-color:  hsl(223, 89%, 47%);
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -93,9 +93,9 @@
 }
 
 .author-tabs button.active {
-  background-color: #420de1;
+  background-color:  hsl(223, 89%, 47%);
   color: #fff;
-  border-color: #420de1;
+  border-color:  hsl(223, 89%, 47%);
 }
 
 .author-tabs button:hover:not(.active) {

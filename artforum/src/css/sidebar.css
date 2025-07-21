@@ -36,6 +36,6 @@
 }
 
 .icon:hover {
-  color: #420de1;
+  color:  hsl(223, 89%, 47%);
   transform:scale(1.2)
 }
