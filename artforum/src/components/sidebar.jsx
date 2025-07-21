@@ -27,7 +27,7 @@ function Sidebar() {
       </div>
       <div className="icon">
         <div className="settings">
-          <i className="fas fa-gear"></i>
+          <i className="fas fa-lightbulb"></i>
         </div>
       </div>
     </aside>

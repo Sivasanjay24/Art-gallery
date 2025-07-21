@@ -101,7 +101,7 @@ select {
   background-color:  hsl(223, 89%, 47%);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;

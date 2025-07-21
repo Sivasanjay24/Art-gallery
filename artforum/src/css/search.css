@@ -24,5 +24,29 @@
 }
 
 .search-bar input:focus {
-  border-color:  hsl(223, 89%, 47%);
+  border-color: hsl(223, 89%, 47%);
+}
+
+.search-bar button {
+  margin-left: 10px;
+  padding: 0; 
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  position: absolute;
+  right: 100px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.search-bar button:hover {
+  color: hsl(223, 89%, 47%);
+  transform: scale(1.2);
 }

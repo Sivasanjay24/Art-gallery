@@ -11,6 +11,11 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
       onSearch(value);
     }
   };
+  const [isSun, setIsSun] = useState(true);
+
+  const handleToggle = () => {
+    setIsSun(!isSun);
+  };
 
   return (
     <div className="search-bar">
@@ -20,6 +25,11 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
         onChange={handleChange}
         placeholder={placeholder}
       />
+      <div>
+        <button onClick={handleToggle}>
+          {isSun ? "☀︎" : "⏾"}
+        </button>
+      </div>
     </div>
   );
 }

@@ -81,6 +81,7 @@
   border-radius: 50%;
   color: #d81b60;
   cursor: pointer;
+  z-index: 100;
   transition: background 0.2s;
 }
 
@@ -105,6 +106,7 @@
   border-radius: 50%;
   color: #333;
   cursor: pointer;
+  z-index: 100;
   transition: background 0.2s;
 }
 
