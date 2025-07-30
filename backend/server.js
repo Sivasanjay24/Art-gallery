@@ -15,10 +15,7 @@ app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // MongoDB Connection
-mongoose.connect(MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(MONGO_URL);
 mongoose.connection.once("open", () => console.log("MongoDB connected"));
 
 // Routes
