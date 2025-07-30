@@ -1,5 +1,3 @@
-/* index.css */
-
 :root {
   --color-primary: hsl(223, 89%, 47%);
   --color-primary-hover: hsla(223, 89%, 47%, 0.6);
@@ -18,9 +16,20 @@
 
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-dark: rgba(0, 0, 0, 0.6);
+
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+
+  --border-color: #ddd;
+  --page-bg: #f8f9fa;
+
+  --bg-color: #fff;
+  --text-color: #333;
+
+  --hover-bg-color: #e9ecef;
 }
 
-/* Light theme as default */
+
 [data-theme="light"], html:not([data-theme]) {
   --bg-color: var(--bg-light);
   --text-color: var(--text-light);
@@ -32,7 +41,7 @@
   --primary-hover: var(--color-primary-hover);
 }
 
-/* Dark theme overrides */
+
 [data-theme="dark"] {
   --bg-color: var(--bg-dark);
   --text-color: var(--text-dark);

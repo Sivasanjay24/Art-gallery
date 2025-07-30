@@ -12,6 +12,7 @@ function Createpost() {
   const [image, setImage] = useState(null);
   const [previewImage, setPreviewImage] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [isDragOver, setIsDragOver] = useState(false); 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -21,10 +22,33 @@ function Createpost() {
     }
   };
 
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragOver(false); 
+
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith("image/")) {
+      setImage(file);
+      setPreviewImage(URL.createObjectURL(file));
+    } else {
+      alert("Only image files are allowed.");
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragOver(true); 
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    setIsDragOver(false); 
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!image) return alert("Please select an image first.");
+    if (!image) return alert("Please select or drop an image first.");
 
     setUploading(true);
 
@@ -37,13 +61,15 @@ function Createpost() {
       formData.append("exhibition", exhibition);
       formData.append("exhibitionDescription", exhibitionDescription);
       formData.append("userId", "1234");
-      formData.append("image", image);
 
-      const res = await axios.post("http://localhost:5000/api/posts/upload", formData);
+      const res = await axios.post(
+        "http://localhost:5000/api/posts/upload",
+        formData
+      );
       alert("Upload successful!");
       console.log(res.data);
 
-      // Clear form
+      // Reset form fields
       setTitle("");
       setDescription("");
       setMedium("");
@@ -54,7 +80,7 @@ function Createpost() {
       setPreviewImage("");
     } catch (err) {
       console.error("Upload failed:", err);
-      alert("Upload failed. Try again.");
+      alert("Upload failed. Please try again.");
     }
 
     setUploading(false);
@@ -65,11 +91,23 @@ function Createpost() {
       <h2>Upload Your Artwork</h2>
       <form onSubmit={handleSubmit} className="form-layout">
         <div className="left-panel">
-          <div className="upload-box">
-            {previewImage && <img src={previewImage} alt="Preview" className="image-preview" />}
+          <div
+            className={`upload-box ${isDragOver ? "drag-over" : ""}`} // Apply class when dragging over
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+          >
+            {previewImage && (
+              <img src={previewImage} alt="Preview" className="image-preview" />
+            )}
             <label className="upload-label">
-              Choose Image
-              <input type="file" className="file-input" accept="image/*" onChange={handleImageChange} />
+              Choose Image or Drag & Drop Here
+              <input
+                type="file"
+                className="file-input"
+                accept="image/*"
+                onChange={handleImageChange}
+              />
             </label>
             <p className="upload-hint">Only .jpg, .png, or .gif allowed</p>
           </div>
@@ -122,10 +160,10 @@ function Createpost() {
             placeholder="Exhibition Description"
             required
           />
-          <button type="submit" className="save-button" disabled={uploading}>
-            {uploading ? "Uploading..." : "Upload"}
-          </button>
         </div>
+        <button type="submit" className="save-button" disabled={uploading}>
+          {uploading ? "Uploading..." : "Upload"}
+        </button>
       </form>
     </div>
   );
