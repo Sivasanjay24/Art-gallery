@@ -3,21 +3,21 @@ import { useNavigate } from "react-router-dom";
 import "../css/profile.css";
 
 const ProfilePage = () => {
-  const [activeTab, setActiveTab] = useState("posts");
+  const [activeTab, setActiveTab] = useState("Work");
   const navigate = useNavigate();
 
-  const dummyPosts = [
+  const dummyWork = [
     { id: 1, image: "img1.jpeg" },
     { id: 2, image: "img2.jpeg" },
     { id: 3, image: "img3.jpeg" },
   ];
 
-  const dummySaved = [
+  const dummyexhibit = [
     { id: 4, image: "img4.jpeg" },
     { id: 5, image: "img5.jpeg" },
   ];
 
-  const dummyLiked = [
+  const dummyart = [
     { id: 6, image: "img6.jpeg" },
   ];
 
@@ -44,21 +44,21 @@ const ProfilePage = () => {
         <div className="profile-pic-wrapper">
           <img src="/images/profile.png" alt="Profile" className="profile-pic" />
           <img src="/images/edit4.jpg" alt="Mask" className="profile-mask" />
-        </div>
+        </div> 
         <h2>@sivasanjay</h2>
         <p>Web Developer | Art Enthusiast | AI Explorer</p>
       </div>
 
       <div className="profile-tabs">
-        <button onClick={() => setActiveTab("posts")} className={activeTab === "posts" ? "active" : ""}>Posts</button>
-        <button onClick={() => setActiveTab("saved")} className={activeTab === "saved" ? "active" : ""}>Saved</button>
-        <button onClick={() => setActiveTab("liked")} className={activeTab === "liked" ? "active" : ""}>Liked</button>
+        <button onClick={() => setActiveTab("Work")} className={activeTab === "Work" ? "active" : ""}>My Work</button>
+        <button onClick={() => setActiveTab("exhibit")} className={activeTab === "exhibit" ? "active" : ""}>Saved Exhibition</button>
+        <button onClick={() => setActiveTab("art")} className={activeTab === "art" ? "active" : ""}>Saved Artwork</button>
       </div>
 
       <div className="profile-content">
-        {activeTab === "posts" && renderImages(dummyPosts)}
-        {activeTab === "saved" && renderImages(dummySaved)}
-        {activeTab === "liked" && renderImages(dummyLiked)}
+        {activeTab === "Work" && renderImages(dummyWork)}
+        {activeTab === "exhibit" && renderImages(dummyexhibit)}
+        {activeTab === "art" && renderImages(dummyart)}
       </div>
     </div>
   );
