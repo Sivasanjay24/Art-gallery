@@ -5,6 +5,10 @@ import "../css/createpost.css";
 function Createpost() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [medium, setMedium] = useState("");
+  const [dimensions, setDimensions] = useState("");
+  const [exhibition, setExhibition] = useState("");
+  const [exhibitionDescription, setExhibitionDescription] = useState("");
   const [image, setImage] = useState(null);
   const [previewImage, setPreviewImage] = useState("");
   const [uploading, setUploading] = useState(false);
@@ -28,6 +32,10 @@ function Createpost() {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("description", description);
+      formData.append("medium", medium);
+      formData.append("dimensions", dimensions);
+      formData.append("exhibition", exhibition);
+      formData.append("exhibitionDescription", exhibitionDescription);
       formData.append("userId", "1234");
       formData.append("image", image);
 
@@ -35,8 +43,13 @@ function Createpost() {
       alert("Upload successful!");
       console.log(res.data);
 
+      // Clear form
       setTitle("");
       setDescription("");
+      setMedium("");
+      setDimensions("");
+      setExhibition("");
+      setExhibitionDescription("");
       setImage(null);
       setPreviewImage("");
     } catch (err) {
@@ -76,6 +89,37 @@ function Createpost() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Artwork Description"
+            required
+          />
+          <input
+            type="text"
+            className="form-input"
+            value={medium}
+            onChange={(e) => setMedium(e.target.value)}
+            placeholder="Medium (e.g., Oil on Canvas)"
+            required
+          />
+          <input
+            type="text"
+            className="form-input"
+            value={dimensions}
+            onChange={(e) => setDimensions(e.target.value)}
+            placeholder="Dimensions (e.g., 24 x 36 in)"
+            required
+          />
+          <input
+            type="text"
+            className="form-input"
+            value={exhibition}
+            onChange={(e) => setExhibition(e.target.value)}
+            placeholder="Featured in Exhibition"
+            required
+          />
+          <textarea
+            className="form-textarea"
+            value={exhibitionDescription}
+            onChange={(e) => setExhibitionDescription(e.target.value)}
+            placeholder="Exhibition Description"
             required
           />
           <button type="submit" className="save-button" disabled={uploading}>
