@@ -25,6 +25,13 @@ function HomePage() {
               <div className="icon-save">
                 <i className="fa-solid fa-bookmark"></i>
               </div>
+              <div className="image-info-overlay">
+                <p className="image-auth">By: {item.author}</p>
+                <p className="image-exhibition">
+                  Exhibition: {item.exhibition}
+                </p>
+                <p className="image-date">Uploaded: {item.uploadedDate}</p>
+              </div>
             </div>
           </div>
         ))}
@@ -32,7 +39,5 @@ function HomePage() {
     </div>
   );
 }
-
-
 
 export default HomePage;

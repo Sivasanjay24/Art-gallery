@@ -1,6 +1,6 @@
 .upload-box.drag-over {
-  border-color: var(--primary-color); 
-  background-color: var(--hover-bg-color); 
+  border-color: var(--primary-color);
+  background-color: var(--hover-bg-color);
 }
 
 .save-button {
@@ -12,16 +12,15 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 50%; 
-  margin: 40px auto 0; 
+  width: 50%;
+  margin: 40px auto 0;
   display: block;
-  grid-column: 1 / -1; 
+  grid-column: 1 / -1;
 }
 
 .save-button:hover {
   background-color: var(--primary-hover);
 }
-
 
 .create-post-container {
   max-width: 1000px;
@@ -59,7 +58,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 475px;
+  height: 483px;
   transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 

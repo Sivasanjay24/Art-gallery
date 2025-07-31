@@ -12,43 +12,50 @@ function Createpost() {
   const [image, setImage] = useState(null);
   const [previewImage, setPreviewImage] = useState("");
   const [uploading, setUploading] = useState(false);
-  const [isDragOver, setIsDragOver] = useState(false); 
+  const [isDragOver, setIsDragOver] = useState(false);
+  const [message, setMessage] = useState(""); 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setImage(file);
     if (file) {
       setPreviewImage(URL.createObjectURL(file));
+      setMessage(""); 
     }
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
-    setIsDragOver(false); 
+    setIsDragOver(false);
 
     const file = e.dataTransfer.files[0];
     if (file && file.type.startsWith("image/")) {
       setImage(file);
       setPreviewImage(URL.createObjectURL(file));
+      setMessage("");
     } else {
-      alert("Only image files are allowed.");
+      setMessage("Only image files are allowed.");
     }
   };
 
   const handleDragOver = (e) => {
     e.preventDefault();
-    setIsDragOver(true); 
+    setIsDragOver(true);
   };
 
   const handleDragLeave = (e) => {
     e.preventDefault();
-    setIsDragOver(false); 
+    setIsDragOver(false);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage("");
 
-    if (!image) return alert("Please select or drop an image first.");
+    if (!image) {
+      setMessage("Please select or drop an image first.");
+      return;
+    }
 
     setUploading(true);
 
@@ -61,15 +68,16 @@ function Createpost() {
       formData.append("exhibition", exhibition);
       formData.append("exhibitionDescription", exhibitionDescription);
       formData.append("userId", "1234");
+      formData.append("image", image);
 
       const res = await axios.post(
         "http://localhost:5000/api/posts/upload",
         formData
       );
-      alert("Upload successful!");
-      console.log(res.data);
+      setMessage("Upload successful!");
+      console.log("Upload response:", res.data);
 
-      // Reset form fields
+     
       setTitle("");
       setDescription("");
       setMedium("");
@@ -80,10 +88,14 @@ function Createpost() {
       setPreviewImage("");
     } catch (err) {
       console.error("Upload failed:", err);
-      alert("Upload failed. Please try again.");
+      if (err.response && err.response.data && err.response.data.message) {
+        setMessage(`Upload failed: ${err.response.data.message}`);
+      } else {
+        setMessage("Upload failed. Please try again.");
+      }
+    } finally {
+      setUploading(false);
     }
-
-    setUploading(false);
   };
 
   return (
@@ -92,7 +104,7 @@ function Createpost() {
       <form onSubmit={handleSubmit} className="form-layout">
         <div className="left-panel">
           <div
-            className={`upload-box ${isDragOver ? "drag-over" : ""}`} // Apply class when dragging over
+            className={`upload-box ${isDragOver ? "drag-over" : ""}`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
