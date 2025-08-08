@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../css/createpost.css";
+import { ToastContainer, toast } from "react-toastify";
 
 function Createpost() {
   const [title, setTitle] = useState("");
@@ -13,14 +14,14 @@ function Createpost() {
   const [previewImage, setPreviewImage] = useState("");
   const [uploading, setUploading] = useState(false);
   const [isDragOver, setIsDragOver] = useState(false);
-  const [message, setMessage] = useState(""); 
+  const [message, setMessage] = useState("");
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setImage(file);
     if (file) {
       setPreviewImage(URL.createObjectURL(file));
-      setMessage(""); 
+      setMessage("");
     }
   };
 
@@ -54,6 +55,7 @@ function Createpost() {
 
     if (!image) {
       setMessage("Please select or drop an image first.");
+      toast.error("Please select or drop an image first.");
       return;
     }
 
@@ -75,9 +77,12 @@ function Createpost() {
         formData
       );
       setMessage("Upload successful!");
-      console.log("Upload response:", res.data);
+      toast.success("Upload successful!", {
+        position: "top-right",
+        autoClose: 3000,
+        theme: "colored",
+      });
 
-     
       setTitle("");
       setDescription("");
       setMedium("");
@@ -88,10 +93,20 @@ function Createpost() {
       setPreviewImage("");
     } catch (err) {
       console.error("Upload failed:", err);
-      if (err.response && err.response.data && err.response.data.message) {
+      if (err.response?.data?.message) {
         setMessage(`Upload failed: ${err.response.data.message}`);
+        toast.error(`Upload failed: ${err.response.data.message}`, {
+          position: "top-right",
+          autoClose: 3000,
+          theme: "colored",
+        });
       } else {
         setMessage("Upload failed. Please try again.");
+        toast.error("Upload failed. Please try again.", {
+          position: "top-right",
+          autoClose: 3000,
+          theme: "colored",
+        });
       }
     } finally {
       setUploading(false);
@@ -177,6 +192,7 @@ function Createpost() {
           {uploading ? "Uploading..." : "Upload"}
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 }

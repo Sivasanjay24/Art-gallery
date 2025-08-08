@@ -59,7 +59,7 @@
   align-items: center;
   justify-content: center;
   height: 483px;
-  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
 }
 
 .upload-label {
