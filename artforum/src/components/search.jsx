@@ -26,7 +26,7 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
         role="button"
         aria-label="Toggle Theme"
       >
-        <div className="knob">{theme === "light" ? "☀︎" : "⏾"}</div>
+        <div className="knob">{theme === "light" ? "☀" : "⏾"}</div>
       </div>
     </div>
   );
