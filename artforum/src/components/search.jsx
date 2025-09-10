@@ -19,9 +19,15 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
         value={query}
         onChange={handleChange}
       />
-      <button className="theme-toggle" onClick={toggleTheme}>
-        {theme === "light" ? "⏾" : "☀︎"}
-      </button>
+      
+      <div
+        className={`theme-switch ${theme}`}
+        onClick={toggleTheme}
+        role="button"
+        aria-label="Toggle Theme"
+      >
+        <div className="knob">{theme === "light" ? "☀︎" : "⏾"}</div>
+      </div>
     </div>
   );
 }
