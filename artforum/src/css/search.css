@@ -57,13 +57,13 @@
 
 .theme-switch.dark .knob  {
   transform: translateX(0);
-  color: rgb(229, 233, 6);
+  color:rgb(255, 238, 172);
 }
 
 
 .theme-switch.light .knob {
   transform: translateX(30px);
-  color: rgb(236, 156, 44)
+  color: goldenrod;
   
 }
 
