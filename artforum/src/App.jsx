@@ -17,10 +17,7 @@ function App() {
     <ThemeProvider>
       <BrowserRouter>
         <Routes>
-          {/* Standalone Landing Page */}
           <Route path="/" element={<Landing />} />
-
-          {/* Main Layout with Sidebar + SearchBar */}
           <Route
             path="/*"
             element={
