@@ -136,7 +136,7 @@ function Createpost() {
                 onChange={handleImageChange}
               />
             </label>
-            <p className="upload-hint">Only .jpg, .png, or .gif allowed</p>
+            <p className="upload-hint">Only .jpg, .png allowed</p>
           </div>
         </div>
 

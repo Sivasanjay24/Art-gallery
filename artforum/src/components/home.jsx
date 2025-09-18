@@ -2,12 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/home.css";
 
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
 
 function HomePage() {
   const navigate = useNavigate();
-  const [imageData, setImageData] = useState([]); 
-  const [loading, setLoading] = useState(true); 
-  const [error, setError] = useState(null); 
+  const [imageData, setImageData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -17,7 +24,8 @@ function HomePage() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        setImageData(data);
+        const shuffledData = shuffleArray(data);
+        setImageData(shuffledData);
       } catch (e) {
         setError(e.message);
       } finally {
@@ -26,7 +34,7 @@ function HomePage() {
     };
 
     fetchImages();
-  }, []); 
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
