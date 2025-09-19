@@ -4,11 +4,11 @@
   z-index: 100;
   width: 100%;
   background-color: var(--bg-color);
-  padding: 12px 70px; 
+  padding: 12px 70px;
   display: flex;
   justify-content: center;
   box-shadow: 0 2px 4px var(--box-shadow-color);
-  align-items: center; 
+  align-items: center;
 }
 
 .search-bar input {
@@ -54,12 +54,10 @@
   transition: transform 0.3s ease;
 }
 
-
 .theme-switch.dark .knob {
   transform: translateX(0);
-  color:rgb(255, 238, 172);
+  color: rgb(255, 238, 172);
 }
-
 
 .theme-switch.light .knob {
   transform: translateX(30px);
@@ -84,12 +82,11 @@
   }
 }
 
-
 @media (max-width: 768px) {
   .search-bar {
     padding: 12px 20px;
-    flex-direction: column; 
-    gap: 10px; 
+    flex-direction: column;
+    gap: 10px;
   }
 
   .search-bar input {
@@ -97,7 +94,7 @@
   }
 
   .theme-switch {
-    position: relative; /* Changes to relative to be part of the flow */
+    position: relative;
     right: auto;
     top: auto;
     width: 60px;

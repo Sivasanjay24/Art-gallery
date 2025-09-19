@@ -127,3 +127,8 @@
 .image-auth {
   font-weight: bold;
 }
+
+.image-title 
+{
+  text-transform: uppercase;
+}

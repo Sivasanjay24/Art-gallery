@@ -19,7 +19,7 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
         value={query}
         onChange={handleChange}
       />
-      
+
       <div
         className={`theme-switch ${theme}`}
         onClick={toggleTheme}

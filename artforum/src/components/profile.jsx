@@ -17,9 +17,7 @@ const ProfilePage = () => {
     { id: 5, image: "img5.jpeg" },
   ];
 
-  const dummyart = [
-    { id: 6, image: "img6.jpeg" },
-  ];
+  const dummyart = [{ id: 6, image: "img6.jpeg" }];
 
   const renderImages = (images) => (
     <div className="profile-gallery">
@@ -42,17 +40,36 @@ const ProfilePage = () => {
       </div>
       <div className="profile-header">
         <div className="profile-pic-wrapper">
-          <img src="/images/profile.png" alt="Profile" className="profile-pic" />
+          <img
+            src="/images/profile.png"
+            alt="Profile"
+            className="profile-pic"
+          />
           <img src="/images/edit4.jpg" alt="Mask" className="profile-mask" />
-        </div> 
+        </div>
         <h2>@sivasanjay</h2>
         <p>Web Developer | Art Enthusiast | AI Explorer</p>
       </div>
 
       <div className="profile-tabs">
-        <button onClick={() => setActiveTab("Work")} className={activeTab === "Work" ? "active" : ""}>My Work</button>
-        <button onClick={() => setActiveTab("exhibit")} className={activeTab === "exhibit" ? "active" : ""}>Saved Exhibition</button>
-        <button onClick={() => setActiveTab("art")} className={activeTab === "art" ? "active" : ""}>Saved Artwork</button>
+        <button
+          onClick={() => setActiveTab("Work")}
+          className={activeTab === "Work" ? "active" : ""}
+        >
+          My Work
+        </button>
+        <button
+          onClick={() => setActiveTab("exhibit")}
+          className={activeTab === "exhibit" ? "active" : ""}
+        >
+          Saved Exhibition
+        </button>
+        <button
+          onClick={() => setActiveTab("art")}
+          className={activeTab === "art" ? "active" : ""}
+        >
+          Saved Artwork
+        </button>
       </div>
 
       <div className="profile-content">

@@ -50,16 +50,14 @@ router.post("/upload", upload.single("image"), async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    // Finds all documents in the Post collection
     const posts = await Post.find();
-    // Sends the retrieved posts as a JSON response
+
     res.status(200).json(posts);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-// Add this new route to your postroutes.js file
 router.get("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);

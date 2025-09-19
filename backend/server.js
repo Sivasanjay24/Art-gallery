@@ -7,7 +7,7 @@ require("dotenv").config();
 
 const app = express();
 const PORT = 5000;
-const MONGO_URL=process.env.MONGO_URL
+const MONGO_URL = process.env.MONGO_URL;
 
 app.use(cors());
 app.use(express.json());
@@ -18,4 +18,6 @@ mongoose.connection.once("open", () => console.log("MongoDB connected"));
 
 app.use("/api/posts", postRoutes);
 
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running at http://localhost:${PORT}`)
+);

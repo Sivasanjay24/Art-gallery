@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../css/sidebar.css";
 
 function Sidebar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    if (isDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isDropdownOpen]);
 
   return (
     <aside className="sidebar">
@@ -35,7 +51,7 @@ function Sidebar() {
         </Link>
       </div>
 
-      <div className="ellipsis">
+      <div className="ellipsis" ref={dropdownRef}>
         <div className="settings" onClick={toggleDropdown}>
           <i className="fa-solid fa-ellipsis-vertical"></i>
         </div>

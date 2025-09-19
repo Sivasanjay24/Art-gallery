@@ -9,7 +9,7 @@ const PostSchema = new mongoose.Schema(
     exhibition: { type: String, required: true },
     exhibitionDescription: { type: String, required: true },
     userId: { type: String, required: true },
-    imagePath: { type: String, required: true }
+    imagePath: { type: String, required: true },
   },
   { timestamps: true }
 );

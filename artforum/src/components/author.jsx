@@ -17,8 +17,6 @@ const authorPage = () => {
     { id: 5, image: "img5.jpeg" },
   ];
 
-  
-
   const renderImages = (images) => (
     <div className="author-gallery">
       {images.map((item) => (
@@ -35,26 +33,31 @@ const authorPage = () => {
 
   return (
     <div className="author-page">
-      
       <div className="author-header">
-        
-          <img src="/images/profile.png" alt="author" className="author-pic" />
-          
-       
+        <img src="/images/profile.png" alt="author" className="author-pic" />
+
         <h2>@sivasanjay</h2>
         <p>Web Developer | Art Enthusiast | AI Explorer</p>
       </div>
 
       <div className="author-tabs">
-        <button onClick={() => setActiveTab("Own Art")} className={activeTab === "Own Art" ? "active" : ""}>Own Art</button>
-        <button onClick={() => setActiveTab("Collaborative Art")} className={activeTab === "Collaborative Art" ? "active" : ""}>Collaborative Art</button>
-        
+        <button
+          onClick={() => setActiveTab("Own Art")}
+          className={activeTab === "Own Art" ? "active" : ""}
+        >
+          Own Art
+        </button>
+        <button
+          onClick={() => setActiveTab("Collaborative Art")}
+          className={activeTab === "Collaborative Art" ? "active" : ""}
+        >
+          Collaborative Art
+        </button>
       </div>
 
       <div className="author-content">
         {activeTab === "Own Art" && renderImages(dummyown)}
         {activeTab === "Collaborative Art" && renderImages(dummycollab)}
-        
       </div>
     </div>
   );

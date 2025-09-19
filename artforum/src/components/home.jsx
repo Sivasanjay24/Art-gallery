@@ -49,7 +49,7 @@ function HomePage() {
         {imageData.map((item) => (
           <div
             className="image-item"
-            key={item._id} 
+            key={item._id}
             onClick={() => navigate(`/image/${item._id}`)}
           >
             <div className="image-container">
@@ -68,7 +68,9 @@ function HomePage() {
                 <p className="image-exhibition">
                   Exhibition: {item.exhibition}
                 </p>
-                <p className="image-date">Uploaded: {new Date(item.createdAt).toLocaleDateString()}</p>
+                <p className="image-date">
+                  Uploaded: {new Date(item.createdAt).toLocaleDateString()}
+                </p>
               </div>
             </div>
           </div>

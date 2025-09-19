@@ -5,7 +5,6 @@ import "../css/landing.css";
 function Landing() {
   return (
     <div className="landing">
-      {/* Navbar */}
       <nav className="navbar">
         <h1 className="logo">🎨 ArtGallery</h1>
         <div className="nav-links">
@@ -15,19 +14,22 @@ function Landing() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <header className="hero">
         <h2>Discover & Share Amazing Art</h2>
         <p>
-          A community-driven art gallery where artists showcase creativity and art lovers find inspiration.
+          A community-driven art gallery where artists showcase creativity and
+          art lovers find inspiration.
         </p>
         <div className="hero-buttons">
-          <Link to="/gallery" className="btn primary">Explore Gallery</Link>
-          <Link to="/create" className="btn secondary">Upload Your Art</Link>
+          <Link to="/gallery" className="btn primary">
+            Explore Gallery
+          </Link>
+          <Link to="/create" className="btn secondary">
+            Upload Your Art
+          </Link>
         </div>
       </header>
 
-      {/* Features */}
       <section className="features">
         <div className="feature">
           <h3>🌟 Showcase Your Talent</h3>
@@ -43,7 +45,6 @@ function Landing() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="footer">
         <p>© {new Date().getFullYear()} ArtGallery. All rights reserved.</p>
       </footer>
