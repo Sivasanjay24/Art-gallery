@@ -8,7 +8,18 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
 
   const handleChange = (e) => {
     setQuery(e.target.value);
-    onSearch?.(e.target.value);
+  };
+
+  const handleSearch = () => {
+    if (query.trim() !== "") {
+      onSearch?.(query);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
 
   return (
@@ -18,7 +29,11 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
         placeholder={placeholder}
         value={query}
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
       />
+      <button className="search-btn" onClick={handleSearch}>
+        Search
+      </button>
 
       <div
         className={`theme-switch ${theme}`}
