@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "../css/search.css";
 
 function SearchBar({ placeholder = "Search...", onSearch }) {
-  const { theme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -12,7 +12,7 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
   const handleChange = (e) => {
     const value = e.target.value;
     setQuery(value);
-    onSearch?.(value); // 🔎 live search
+    onSearch?.(value);
   };
 
   const handleSearch = () => {
@@ -20,7 +20,6 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
 
     onSearch?.(query);
 
-    // ✅ redirect to /home if not already there
     if (location.pathname !== "/home") {
       navigate("/home");
     }
@@ -41,7 +40,18 @@ function SearchBar({ placeholder = "Search...", onSearch }) {
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
       />
-      <button className="search-btn" onClick={handleSearch}>Search</button>
+      <button className="search-btn" onClick={handleSearch}>
+        Search
+      </button>
+
+      <div
+        className={`theme-switch ${theme}`}
+        onClick={toggleTheme}
+        role="button"
+        aria-label="Toggle Theme"
+      >
+        <div className="knob">{theme === "light" ? "☀" : "⏾"}</div>
+      </div>
     </div>
   );
 }

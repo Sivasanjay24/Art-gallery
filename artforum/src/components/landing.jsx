@@ -8,8 +8,8 @@ function Landing() {
       <nav className="navbar">
         <h1 className="logo">🎨 ArtGallery</h1>
         <div className="nav-links">
-          <Link to="/gallery">Gallery</Link>
-          <Link to="/create">Upload</Link>
+          <Link to="/home">Gallery</Link>
+          <Link to="/createpost">Upload</Link>
           <Link to="/about">About</Link>
         </div>
       </nav>
@@ -21,10 +21,10 @@ function Landing() {
           art lovers find inspiration.
         </p>
         <div className="hero-buttons">
-          <Link to="/gallery" className="btn primary">
+          <Link to="/home" className="btn primary">
             Explore Gallery
           </Link>
-          <Link to="/create" className="btn secondary">
+          <Link to="/createpost" className="btn secondary">
             Upload Your Art
           </Link>
         </div>

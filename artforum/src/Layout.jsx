@@ -14,7 +14,6 @@ function Layout() {
           <SearchBar onSearch={setSearchQuery} />
         </div>
         <div className="page-content">
-          {/* All child routes will render here */}
           <Outlet context={{ searchQuery }} />
         </div>
       </div>

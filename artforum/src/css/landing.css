@@ -3,7 +3,7 @@
   color: #fff;
   background: linear-gradient(to bottom, #1a1a1a, #000);
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 90vw;
   display: flex;
   flex-direction: column;
 }
@@ -16,7 +16,7 @@
   background: rgba(0, 0, 0, 0.6);
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 93vw;
   z-index: 10;
 }
 
@@ -46,6 +46,7 @@
   margin-bottom: 1rem;
   background: linear-gradient(90deg, #ff4da6, #9b4dff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
